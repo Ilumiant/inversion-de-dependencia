@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "migrate": "ts-node src/db/migration.ts",
+    "seed": "ts-node src/db/seeder.ts",
     "build": "tsc -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +15,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
     "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "jose": "^5.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.5.0",
+    "mysql2": "^3.9.3"
   }
 }
